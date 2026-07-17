@@ -31,7 +31,7 @@ public:
 	    bool status = false;
 	    if (!stopped_)
 	    {
-			data_.emplace(forward<V>(value));
+    		data_.emplace(forward<V>(value));
 		    status = true;
 		}
 		
