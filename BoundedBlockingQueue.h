@@ -31,8 +31,8 @@ public:
 	    bool status = false;
 	    if (!stopped_)
 	    {
-    		data_.emplace(forward<V>(value));
-		    status = true;
+            data_.emplace(forward<V>(value));
+            status = true;
 		}
 		
 		lock.unlock();
