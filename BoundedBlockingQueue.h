@@ -12,7 +12,7 @@ class BoundedBlockingQueue
 {
 public:
     explicit BoundedBlockingQueue(size_t capacity)
-				  : capacity_(capacity)
+				 : capacity_(capacity)
     {
 	    if (capacity_ == 0)
 	    {
