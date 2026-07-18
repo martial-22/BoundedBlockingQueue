@@ -4,7 +4,8 @@
 #include <optional>
 #include <stdexcept>
 
-using namespace std;
+namespace std
+{
 
 template<typename T>
 class BoundedBlockingQueue
@@ -82,3 +83,5 @@ private:
 	const size_t capacity_;
 	bool stopped_ = false;
 };
+
+}
