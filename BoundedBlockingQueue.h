@@ -10,12 +10,12 @@ class BoundedBlockingQueue
 public:
 	explicit BoundedBlockingQueue(size_t capacity)
 		: capacity_(capacity)
+	{
+		if (capacity_ == 0)
 		{
-			if (capacity_ == 0)
-			{
-				throw std::invalid_argument("BoundedBlockingQueue: 0 capacity");
-			}
+			throw std::invalid_argument("BoundedBlockingQueue: 0 capacity");
 		}
+	}
 
 	template <typename V>
 	requires std::constructible_from<T, V>
