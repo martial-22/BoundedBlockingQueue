@@ -3,6 +3,7 @@
 #include <condition_variable>
 #include <optional>
 #include <stdexcept>
+#include <concepts>
 
 template<typename T>
 class BoundedBlockingQueue
@@ -18,7 +19,7 @@ public:
 	}
 
 	template <typename V>
-	requires std::constructible_from<T, V>
+	requires std::constructible_from<T, V&&>
 	bool push(V&& value)
 	{
 		std::unique_lock lock(mtx_);
